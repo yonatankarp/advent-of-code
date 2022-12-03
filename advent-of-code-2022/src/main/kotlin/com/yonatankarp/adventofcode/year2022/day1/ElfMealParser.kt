@@ -1,8 +1,10 @@
 package com.yonatankarp.adventofcode.year2022.day1
 
+import com.yonatankarp.adventofcode.utils.FileLoader
+
 class ElfMealParser {
     fun parseList(fileName: String): List<Elf> {
-        val elfsInput = readFromFile(fileName)
+        val elfsInput = FileLoader.readLines(fileName)
         val elfsList = mutableListOf<Elf>()
 
         var mealList = mutableListOf<Meal>()
@@ -19,6 +21,5 @@ class ElfMealParser {
         return elfsList
     }
 
-    private fun readFromFile(fileName: String): List<String> =
-        object {}.javaClass.getResource(fileName)!!.readText().split(System.lineSeparator())
+
 }
