@@ -5,3 +5,9 @@ enum class GameChoice(val score: Int) {
     PAPER(2),
     SCISSORS(3)
 }
+
+enum class RoundEndStrategy {
+    WIN,
+    LOSE,
+    DRAW
+}
