@@ -10,7 +10,7 @@ data class RoundStrategy(val opponentChoose: GameChoice, val roundEndStrategy: R
 
 class StrategyGuideParser {
     fun loadStrategy(fileName: String): MutableList<RoundStrategy> {
-        val input = FileLoader.readLines(fileName)
+        val input = FileLoader.loadInput(fileName)
 
         val strategy = mutableListOf<RoundStrategy>()
         for (line in input) {
