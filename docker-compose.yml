@@ -1,10 +1,10 @@
 version: "3.9"
 services:
-  spring-boot-app-template:
-    container_name: spring-boot-app-template
+  advent-of-code-2022:
+    container_name: advent-of-code-2022
     build:
       context: .
-      dockerfile: ./spring-boot-app-template/Dockerfile
+      dockerfile: ./advent-of-code-2022/Dockerfile
     networks:
       - proxynet
     environment:
@@ -14,4 +14,4 @@ services:
 
 networks:
   proxynet:
-    name: spring-boot-app-template-network
+    name: advent-of-code-2022-network

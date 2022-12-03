@@ -1,19 +1,19 @@
-# spring-boot-app-template
+# advent-of-code-2022
 
-[ci-badge]: https://github.com/yonatankarp/spring-boot-app-template/actions/workflows/ci.yml/badge.svg
-[ci-state]: https://github.com/yonatankarp/spring-boot-app-template/actions/workflows/ci.yml
-[linter-badge]: https://github.com/yonatankarp/spring-boot-app-template/actions/workflows/linting.yml/badge.svg
-[linter-state]: https://github.com/yonatankarp/spring-boot-app-template/actions/workflows/linting.yml
-[quality-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_spring-boot-app-template&metric=alert_status
-[quality-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_spring-boot-app-template
-[maintainability-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_spring-boot-app-template&metric=sqale_rating
-[maintainability-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_spring-boot-app-template
-[tech-debt-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_spring-boot-app-template&metric=sqale_index
-[tech-debt-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_spring-boot-app-template
-[security-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_spring-boot-app-template&metric=security_rating
-[security-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_spring-boot-app-template
-[vulnerabilities-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_spring-boot-app-template&metric=vulnerabilities
-[vulnerabilities-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_spring-boot-app-template
+[ci-badge]: https://github.com/yonatankarp/advent-of-code-2022/actions/workflows/ci.yml/badge.svg
+[ci-state]: https://github.com/yonatankarp/advent-of-code-2022/actions/workflows/ci.yml
+[linter-badge]: https://github.com/yonatankarp/advent-of-code-2022/actions/workflows/linting.yml/badge.svg
+[linter-state]: https://github.com/yonatankarp/advent-of-code-2022/actions/workflows/linting.yml
+[quality-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_advent-of-code-2022&metric=alert_status
+[quality-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_advent-of-code-2022
+[maintainability-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_advent-of-code-2022&metric=sqale_rating
+[maintainability-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_advent-of-code-2022
+[tech-debt-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_advent-of-code-2022&metric=sqale_index
+[tech-debt-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_advent-of-code-2022
+[security-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_advent-of-code-2022&metric=security_rating
+[security-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_advent-of-code-2022
+[vulnerabilities-badge]: https://sonarcloud.io/api/project_badges/measure?project=yonatankarp_advent-of-code-2022&metric=vulnerabilities
+[vulnerabilities-state]: https://sonarcloud.io/summary/new_code?id=yonatankarp_advent-of-code-2022
 [license-badge]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-link]: https://opensource.org/licenses/MIT
 
@@ -25,31 +25,6 @@
 | License      | [![License: MIT][license-badge]][license-link]                                                                                                                                         |
 
 
-
-## Purpose
-
-This is a template to fast and easily bootstrap new spring boot web
-applications that including full build based on Gradle, CI based on GitHub
-actions, and containers based on Docker
-
-## What's inside
-
-The template is a working application with a minimal setup. It contains:
-
-- application skeleton
-- setup script to prepare project
-- common plugins and libraries
-- docker & docker-compose setup
-- code quality tools already set up
-- integration with GitHub Actions
-- integration with Dependabot
-- integration with SonarCloudA
-- MIT license and contribution information
-
-## Setup
-
-Located in `./bin/init.sh`. Simply run and follow the explanation how to
-execute it. This script will self-destroy itself when finished.
 
 ## Getting Started
 
@@ -103,7 +78,7 @@ For Apple M1 processor run the following instead:
 DOCKER_BUILDKIT=0 docker compose build
 ```
 
-Run the distribution (created in `spring-boot-app-template/build/install/spring-boot-app-template`
+Run the distribution (created in `advent-of-code-2022/build/install/advent-of-code-2022`
 directory) by executing the following command:
 
 ```shell
