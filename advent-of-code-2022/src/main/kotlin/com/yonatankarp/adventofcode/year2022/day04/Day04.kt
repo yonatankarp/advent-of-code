@@ -1,4 +1,4 @@
-package com.yonatankarp.adventofcode.year2022
+package com.yonatankarp.adventofcode.year2022.day04
 
 import com.yonatankarp.adventofcode.utils.readPuzzleInput
 
