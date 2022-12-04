@@ -9,23 +9,18 @@ import com.yonatankarp.adventofcode.year2022.day2.RoundEndStrategy.*
 data class RoundStrategy(val opponentChoose: GameChoice, val roundEndStrategy: RoundEndStrategy)
 
 class StrategyGuideParser {
-    fun loadStrategy(fileName: String): MutableList<RoundStrategy> {
-        val input = FileLoader.loadInput(fileName)
-
-        val strategy = mutableListOf<RoundStrategy>()
-        for (line in input) {
-            if (line.isBlank()) continue
-            val (opponent, mine) = line.split(" ")
-            strategy.add(
+    fun loadStrategy(fileName: String): List<RoundStrategy> =
+         FileLoader.loadInput(fileName)
+            .filter { it.isNotBlank() }
+            .map { it.split(" ") }
+            .map {
+                val (opponent, mine) = it
                 RoundStrategy(
                     opponentChoose = toGameChoice(opponent),
                     roundEndStrategy = toRoundEndStrategy(mine)
                 )
-            )
-        }
-
-        return strategy
-    }
+            }
+            .toList()
 
     private fun toGameChoice(opponentChoose: String) =
         when (opponentChoose) {
