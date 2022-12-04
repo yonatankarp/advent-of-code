@@ -83,3 +83,11 @@ So, in this example, the number of overlapping assignment pairs is `4`.
 
 **In how many assignment pairs do the ranges overlap?**
 
+Your puzzle answer was `876`.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
+
+At this point, you should return to your Advent calendar and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](https://adventofcode.com/2022/day/4/input).
+
