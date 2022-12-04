@@ -4,6 +4,9 @@ import com.yonatankarp.adventofcode.utils.readPuzzleInput
 import com.yonatankarp.adventofcode.year2022.GameChoice.PAPER
 import com.yonatankarp.adventofcode.year2022.GameChoice.ROCK
 import com.yonatankarp.adventofcode.year2022.GameChoice.SCISSORS
+import com.yonatankarp.adventofcode.year2022.RoundStrategy.DRAW
+import com.yonatankarp.adventofcode.year2022.RoundStrategy.LOOSE
+import com.yonatankarp.adventofcode.year2022.RoundStrategy.WIN
 
 fun main() {
     println("Your 🪨📃✂️ score is: ${gameScore()}")
@@ -32,14 +35,24 @@ enum class GameChoice(val value: Int) {
         }
 }
 
+enum class RoundStrategy {
+    WIN,
+    DRAW,
+    LOOSE
+}
+
 private object Scores {
     const val WIN = 6
     const val DRAW = 3
     const val LOOSE = 0
 }
 
-fun toGameChoice(line: String) = line[0].toGameChoice() to line[2].toGameChoice()
-
+fun toGameChoice(line: String): Pair<GameChoice, GameChoice> {
+    val opponent = line[0].toGameChoice()
+    val roundStrategy = line[2].toRoundStrategy()
+    val mine = roundStrategy.toGameChoice(opponent)
+    return opponent to mine
+}
 
 fun Char.toGameChoice(): GameChoice =
     when (this) {
@@ -47,6 +60,35 @@ fun Char.toGameChoice(): GameChoice =
         'B', 'Y' -> PAPER
         'C', 'Z' -> SCISSORS
         else -> throw IllegalArgumentException("Game choice cannot be $this")
+    }
+
+fun Char.toRoundStrategy(): RoundStrategy =
+    when (this) {
+        'X' -> LOOSE
+        'Y' -> DRAW
+        'Z' -> WIN
+        else -> throw IllegalArgumentException("Game choice cannot be $this")
+    }
+
+fun GameChoice.wins() =
+    when(this) {
+        ROCK -> SCISSORS
+        PAPER -> ROCK
+        SCISSORS -> PAPER
+    }
+
+fun GameChoice.looseTo() =
+    when(this) {
+        ROCK -> PAPER
+        PAPER -> SCISSORS
+        SCISSORS -> ROCK
+    }
+
+fun RoundStrategy.toGameChoice(opponent: GameChoice): GameChoice =
+    when (this) {
+        WIN -> opponent.looseTo()
+        DRAW -> opponent
+        LOOSE -> opponent.wins()
     }
 
 private fun GameChoice.scoreAgainst(opponent: GameChoice) =
