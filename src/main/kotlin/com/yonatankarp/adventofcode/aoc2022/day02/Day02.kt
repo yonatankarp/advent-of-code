@@ -1,12 +1,12 @@
-package com.yonatankarp.adventofcode.year2022.day02
+package com.yonatankarp.adventofcode.aoc2022.day02
 
 import com.yonatankarp.adventofcode.utils.readPuzzleInput
-import com.yonatankarp.adventofcode.year2022.day02.GameChoice.PAPER
-import com.yonatankarp.adventofcode.year2022.day02.GameChoice.ROCK
-import com.yonatankarp.adventofcode.year2022.day02.GameChoice.SCISSORS
-import com.yonatankarp.adventofcode.year2022.day02.RoundStrategy.DRAW
-import com.yonatankarp.adventofcode.year2022.day02.RoundStrategy.LOOSE
-import com.yonatankarp.adventofcode.year2022.day02.RoundStrategy.WIN
+import com.yonatankarp.adventofcode.aoc2022.day02.GameChoice.PAPER
+import com.yonatankarp.adventofcode.aoc2022.day02.GameChoice.ROCK
+import com.yonatankarp.adventofcode.aoc2022.day02.GameChoice.SCISSORS
+import com.yonatankarp.adventofcode.aoc2022.day02.RoundStrategy.DRAW
+import com.yonatankarp.adventofcode.aoc2022.day02.RoundStrategy.LOOSE
+import com.yonatankarp.adventofcode.aoc2022.day02.RoundStrategy.WIN
 
 fun main() {
     println("Your 🪨📃✂️ score is: ${gameScore()}")

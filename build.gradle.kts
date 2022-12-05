@@ -1,25 +1,57 @@
 plugins {
     id("jacoco")
     id("pmd")
-    id("advent-of-code-2022.java-conventions")
-    id("advent-of-code-2022.code-metrics")
-    id("advent-of-code-2022.publishing-conventions")
-    id("com.diffplug.spotless") version "6.12.0" apply true
-    kotlin("jvm") version "1.7.22" apply false
-    kotlin("plugin.spring") version "1.7.22" apply false
+    id("com.diffplug.spotless") version "6.12.0"
+    val kotlinVersion = "1.7.22"
+    kotlin("jvm") version kotlinVersion
+    kotlin("plugin.spring") version kotlinVersion
 }
 
-subprojects {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven { url = uri("https://packages.confluent.io/maven/") }
-        maven {
-            url = uri("https://maven.pkg.github.com/yonatankarp/advent-of-code-2022")
-            credentials {
-                username = findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_ACTOR")
-                password = findProperty("gpr.key")?.toString() ?: System.getenv("GITHUB_TOKEN")
-            }
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.github.kittinunf.fuel:fuel:2.3.1") // For downloading input file
+    implementation("com.github.kittinunf.result:result:5.2.1") // Needed for Fuel
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
+
+}
+
+tasks {
+    getByName<Jar>("jar") {
+        enabled = false
+    }
+
+    build {
+        finalizedBy(spotlessApply)
+    }
+
+    withType<Test> {
+        useJUnitPlatform()
+        finalizedBy(spotlessApply)
+        finalizedBy(jacocoTestReport)
+        finalizedBy(pmdTest)
+    }
+
+    jacoco {
+        toolVersion = "0.8.7"
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.required.set(true)
+            html.required.set(true)
         }
     }
 }
+
