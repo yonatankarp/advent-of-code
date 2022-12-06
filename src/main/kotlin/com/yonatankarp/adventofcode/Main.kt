@@ -12,7 +12,7 @@ import java.io.File
 
 fun main() {
     val year = 2022
-    val day = 4
+    val day = 5
 
     createDayClassFile(year, day)
     createTestFile(year, day)
