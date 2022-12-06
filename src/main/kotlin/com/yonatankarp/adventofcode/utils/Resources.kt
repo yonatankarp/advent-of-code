@@ -38,7 +38,10 @@ fun resourceSplitOnBlankLines(fileName: String): List<String> =
         .joinToString(NEW_LINE)
         .split(EMPTY_LINE)
 
-private fun resourceFile(fileName: String) =
+/**
+ * Reads the given file and returns it as a single string.
+ */
+fun resourceFile(fileName: String) =
     File(Resources.javaClass.classLoader.getResource(fileName)!!.toURI())
 
 private val NEW_LINE = System.lineSeparator()

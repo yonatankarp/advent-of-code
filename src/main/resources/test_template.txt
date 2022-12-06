@@ -1,0 +1,33 @@
+package com.yonatankarp.adventofcode.aoc<YEAR_PLACEHOLDER>.day<DAY_PLACEHOLDER>
+
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import com.yonatankarp.adventofcode.utils.resourceAsList
+
+class Day<DAY_PLACEHOLDER>Test {
+    private val exampleInput = """""".trimIndent().split("\n")
+
+    @Test
+    fun testPartOneExample1() {
+        val day<DAY_PLACEHOLDER> = Day<DAY_PLACEHOLDER>(exampleInput)
+        assertEquals(0, day<DAY_PLACEHOLDER>.solvePart1())
+    }
+
+    @Test
+    fun partOneRealInput() {
+        val day<DAY_PLACEHOLDER> = Day<DAY_PLACEHOLDER>(resourceAsList("<YEAR_PLACEHOLDER>/day<DAY_PLACEHOLDER>.txt"))
+        assertEquals(0, day<DAY_PLACEHOLDER>.solvePart1())
+    }
+
+    @Test
+    fun testPartTwoExample1() {
+        val day<DAY_PLACEHOLDER> = Day<DAY_PLACEHOLDER>(exampleInput)
+        assertEquals(0, day<DAY_PLACEHOLDER>.solvePart2())
+    }
+
+    @Test
+    fun partTwoRealInput() {
+        val day<DAY_PLACEHOLDER> = Day<DAY_PLACEHOLDER>(resourceAsList("<YEAR_PLACEHOLDER>/day<DAY_PLACEHOLDER>.txt"))
+        assertEquals(0, day<DAY_PLACEHOLDER>.solvePart2())
+    }
+}

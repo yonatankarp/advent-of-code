@@ -22,6 +22,7 @@ repositories {
 dependencies {
     implementation("com.github.kittinunf.fuel:fuel:2.3.1") // For downloading input file
     implementation("com.github.kittinunf.result:result:5.2.1") // Needed for Fuel
+    implementation("io.github.furstenheim:copy_down:1.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
 

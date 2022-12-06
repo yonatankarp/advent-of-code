@@ -1,0 +1,12 @@
+package com.yonatankarp.adventofcode.aoc<YEAR_PLACEHOLDER>.day<DAY_PLACEHOLDER>
+
+class Day<DAY_PLACEHOLDER>(input: List<String>) {
+
+    fun solvePart1(): Int {
+        return -1
+    }
+
+    fun solvePart2(): Int {
+        return -1
+    }
+}
