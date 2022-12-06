@@ -2,9 +2,11 @@ package com.yonatankarp.adventofcode.aoc2022.day05
 
 import com.yonatankarp.adventofcode.utils.resourceSplitOnBlankLines
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
+@Disabled
 class Day05Test {
 
     private val exampleInput = """

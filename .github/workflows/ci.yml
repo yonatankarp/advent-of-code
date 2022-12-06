@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        service: [ advent-of-code-2022 ]
+        service: [ advent-of-code ]
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -71,12 +71,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew build
-
-      - name: Build Docker Image
-        if: steps.changes.outputs.source_code == 'true'
-        id: container
-        run: |
-          docker build --file ./${{ matrix.service }}/Dockerfile --tag ${{ matrix.service }}:latest .
 
   dependabot_auto_merge:
     if: ${{ github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]' }}
