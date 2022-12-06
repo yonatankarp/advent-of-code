@@ -22,10 +22,12 @@ repositories {
 dependencies {
     implementation("com.github.kittinunf.fuel:fuel:2.3.1") // For downloading input file
     implementation("com.github.kittinunf.result:result:5.3.0") // Needed for Fuel
-    implementation("io.github.furstenheim:copy_down:1.1")
+    implementation("io.github.furstenheim:copy_down:1.1") // Convert puzzle description to markdown
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.1")
+    val junitVersion = "5.9.1"
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 
 }
 

@@ -11,7 +11,7 @@ import java.io.File
 
 fun main(args: Array<String>) {
     val year = 2022
-    val day = 5
+    val day = 6
 
     if(args.firstOrNull() == "download") {
         readInputFileFromInternet(year, day)
@@ -78,7 +78,8 @@ private fun createYearlyReadMe(year: Int) {
  * Note: Puzzle name is assumed to look like: --- Day XYZ: Some puzzle name ---
  */
 private fun getPuzzleName(content: String) =
-    """--- Day \d+: (.+) ---""".toRegex().find(content)!!.groups[1]!!.value
+    """--- Day \d+: (.+) ---""".toRegex().find(content)?.groups?.get(1)?.value
+        ?: throw RuntimeException("Cannot fetch puzzle name, please ensure you have set session_cookie.txt")
 
 /**
  * Add the new puzzle description for the yearly README
