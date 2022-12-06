@@ -2,11 +2,9 @@ package com.yonatankarp.adventofcode.aoc2022.day05
 
 import com.yonatankarp.adventofcode.utils.resourceSplitOnBlankLines
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-@Disabled
 class Day05Test {
 
     private val exampleInput = """
@@ -41,13 +39,13 @@ class Day05Test {
         @Test
         fun `Part 2 - Example`() {
             val day05 = Day05(exampleInput)
-            assertEquals("", day05.solvePart2())
+            assertEquals("MCD", day05.solvePart2())
         }
 
         @Test
         fun `Part 2 - Real Input`() {
             val day05 = Day05(resourceSplitOnBlankLines("2022/day05.txt"))
-            assertEquals("", day05.solvePart2())
+            assertEquals("LVMRWSSPZ", day05.solvePart2())
         }
     }
 }

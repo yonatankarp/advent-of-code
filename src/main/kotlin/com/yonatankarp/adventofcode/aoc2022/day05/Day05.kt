@@ -28,15 +28,15 @@ class Day05(input: List<String>) {
                 Instruction(amount.toInt(), from.toInt() - 1, to.toInt() - 1)
             }
 
-    fun solvePart1(): String =
-        instructions
-            .forEach { instruction ->
-                val toMove = MutableList(instruction.amount) { stacks[instruction.from].removeFirst() }.reversed()
-                stacks[instruction.to].addAll(0, toMove)
-            }
-            .let { stacks.joinToString("") { it.first().toString() } }
+    private fun solve(isOneContainerOnly: Boolean = true) = instructions
+        .forEach { instruction ->
+            val toMove = MutableList(instruction.amount) { stacks[instruction.from].removeFirst() }
+                .apply { if (isOneContainerOnly) this.reverse() }
+            stacks[instruction.to].addAll(0, toMove)
+        }
+        .let { stacks.joinToString("") { it.first().toString() } }
 
-    fun solvePart2(): String {
-        return "n/a"
-    }
+    fun solvePart1(): String = solve(true)
+
+    fun solvePart2(): String = solve(false)
 }
