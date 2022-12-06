@@ -10,14 +10,17 @@ import io.github.furstenheim.CopyDown
 import io.github.furstenheim.OptionsBuilder.anOptions
 import java.io.File
 
-fun main() {
+fun main(args: Array<String>) {
     val year = 2022
     val day = 5
 
-    createDayClassFile(year, day)
-    createTestFile(year, day)
-    readInputFileFromInternet(year, day)
-    readPuzzleDescriptionFromInternet(year, day)
+    if(args.firstOrNull() == "download") {
+        readInputFileFromInternet(year, day)
+        readPuzzleDescriptionFromInternet(year, day)
+    } else {
+        createDayClassFile(year, day)
+        createTestFile(year, day)
+    }
 }
 
 fun readInputFileFromInternet(year: Int, day: Int) {
