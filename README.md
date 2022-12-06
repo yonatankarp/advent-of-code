@@ -10,8 +10,7 @@ Whenever you work on a new puzzle, simply run [Main.kt](./src/main/kotlin/com/yo
 It will automatically generate for you a new class for the day, and a new class
 for testing. Make sure to set the year and day correctly before running.
 
-To download the input of the file, you need to pass the parameter `download`
-to the script, and set your [session_cookie.txt](./src/main/resources/session_cookie.txt).
+To download the input of the file you need to set your [session_cookie.txt](./src/main/resources/session_cookie.txt).
 
 The cookie can be found by following those steps:
 
