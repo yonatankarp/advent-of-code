@@ -4,7 +4,6 @@ import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.Headers
 import com.github.kittinunf.result.Result
 import com.yonatankarp.adventofcode.utils.resourceAsString
-import com.yonatankarp.adventofcode.utils.resourceFile
 import io.github.furstenheim.CodeBlockStyle.FENCED
 import io.github.furstenheim.CopyDown
 import io.github.furstenheim.OptionsBuilder.anOptions
@@ -132,8 +131,7 @@ private fun createClassFile(directory: String, fileName: String, classContent: (
 }
 
 fun getTemplateContent(templateName: String, year: Int, day: Int): String =
-    resourceFile(templateName)
-        .readText()
+    resourceAsString(templateName)
         .replace("<YEAR_PLACEHOLDER>", year.toString())
         .replace("<DAY_PLACEHOLDER>", day.withPadding())
         .replace("\n", System.getProperty("line.separator"))
