@@ -1,9 +1,11 @@
 # Advent to Code 2022
 
-- [Day 1: Calorie Counting](./day01/README.md)
-- [Day 2: Rock Paper Scissors](./day02/README.md)
-- [Day 3: Rucksack Reorganization](./day03/README.md)
-- [Day 4: Camp Cleanup](./day04/README.md)
-- [Day 5: Supply Stacks](./day05/README.md)
-- [Day 6: Tuning Trouble](./day06/README.md)
-- [Day 7: No Space Left On Device](./day07/README.md)
+| Day | Title                   | Description               | Code                     | Blog Post                                                                |
+|-----|-------------------------|---------------------------|--------------------------|--------------------------------------------------------------------------|
+| 1   | Calorie Counting        | [Link](./day01/README.md) | [Link](./day01/Day01.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-1-kotlin-edition) |
+| 2   | Rock Paper Scissors     | [Link](./day02/README.md) | [Link](./day02/Day02.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-2-kotlin-edition) |
+| 3   | Rucksack Reorganization | [Link](./day03/README.md) | [Link](./day03/Day03.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-3-kotlin-edition) |
+| 4   | Camp Cleanup            | [Link](./day04/README.md) | [Link](./day04/Day04.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-4-kotlin-edition) |
+| 5   | Supply Stacks           | [Link](./day05/README.md) | [Link](./day05/Day05.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-5-kotlin-edition) |
+| 6   | Tuning Trouble          | [Link](./day06/README.md) | [Link](./day06/Day06.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-6-kotlin-edition) |
+| 7   | No Space Left On Device | [Link](./day07/README.md) | [Link](./day07/Day07.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-7-kotlin-edition) |

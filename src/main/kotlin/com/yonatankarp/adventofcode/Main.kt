@@ -84,9 +84,16 @@ private fun getPuzzleName(content: String) =
 /**
  * Add the new puzzle description for the yearly README
  */
-private fun updateYearlyReadMe(year: Int, day: Int, puzzleName: String) =
+private fun updateYearlyReadMe(year: Int, day: Int, puzzleName: String) {
+    val dayWithPadding = day.withPadding(2)
+    val rowToUpdate = """
+        | $day   | $puzzleName | [Link](./day$dayWithPadding/README.md) | [Link](./day$dayWithPadding/Day$dayWithPadding.kt) | [Link](https://yonatankarp.com/advent-of-code-$year-day-$day-kotlin-edition) |
+    """.trimIndent()
+
     File("${year.getYearDirectory("main")}/README.md")
-        .appendText("- [Day $day: $puzzleName](./day${day.withPadding()}/README.md)" + System.lineSeparator())
+        .appendText(rowToUpdate)
+}
+
 
 private fun downloadFile(url: String, path: String, writeHandler: (String) -> Unit): String {
     val sessionCookie = resourceAsString("session_cookie.txt").replace("\n", "")

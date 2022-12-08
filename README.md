@@ -1,4 +1,10 @@
-# Advent of Code
+# Advent of Code - Kotlin Edition
+
+This repository is my personal attempt to solve the [Advent of Code](http://adventofcode.com/2022)
+yearly challenges using the Kotlin programming language.
+
+You can find detailed explanation about the solutions in my block at
+[https://yonatankarp.com](https://yonatankarp.com/series/adven-to-fcode).
 
 ## Puzzles by years
 
