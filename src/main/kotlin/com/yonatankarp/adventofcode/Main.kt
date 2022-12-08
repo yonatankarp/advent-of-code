@@ -11,7 +11,7 @@ import java.io.File
 
 fun main(args: Array<String>) {
     val year = 2022
-    val day = 6
+    val day = 7
 
     if(args.firstOrNull() == "download") {
         readInputFileFromInternet(year, day)
@@ -89,7 +89,7 @@ private fun updateYearlyReadMe(year: Int, day: Int, puzzleName: String) =
         .appendText("- [Day $day: $puzzleName](./day${day.withPadding()}/README.md)" + System.lineSeparator())
 
 private fun downloadFile(url: String, path: String, writeHandler: (String) -> Unit): String {
-    val sessionCookie = resourceAsString("session_cookie.txt")
+    val sessionCookie = resourceAsString("session_cookie.txt").replace("\n", "")
     return Fuel.get(url)
         .header(Headers.USER_AGENT to "https://github.com/yonatankarp/advent-of-code/blob/main/src/main/kotlin/com/yonatankarp/adventofcode/Main.kt by yonatankarp")
         .header(Headers.COOKIE to "session=$sessionCookie")
