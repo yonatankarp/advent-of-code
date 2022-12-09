@@ -9,9 +9,12 @@ class Day07(input: List<String>) {
         input.forEach { item ->
             when {
                 item == "$ ls" -> {}
-                item.startsWith("dir") -> {}
                 item == "$ cd /" -> callStack.removeIf { it.name != "/" }
                 item == "$ cd .." -> callStack.removeFirst()
+                item.startsWith("dir") -> {
+                    val (_, name) = item.split(" ")
+                    callStack.first().createDirectory(name)
+                }
                 item.startsWith("$ cd") -> {
                     val (_, _, name) = item.split(" ")
                     callStack.addFirst(callStack.first().getDirectory(name))
@@ -62,12 +65,20 @@ class Day07(input: List<String>) {
             content[file.name] = file
         }
 
-        fun getDirectory(directoryName: String): Directory =
-            content.getOrPut(directoryName) { Directory(directoryName) } as Directory
+        fun getDirectory(directoryName: String) : Directory =
+            content[directoryName] as Directory
+
+        fun createDirectory(directoryName: String) {
+            content[directoryName] = Directory(directoryName)
+        }
 
         fun findDirectoriesBy(predicate: (Directory) -> Boolean): List<FileSystem> {
-            val directories = content.values.toList().filterIsInstance<Directory>()
-            return directories.filter { predicate(it) } + directories.flatMap { it.findDirectoriesBy(predicate) }
+            val directories = content
+                .values
+                .toList()
+                .filterIsInstance<Directory>()
+            return directories.filter { predicate(it) } +
+                    directories.flatMap { it.findDirectoriesBy(predicate) }
         }
     }
 }
