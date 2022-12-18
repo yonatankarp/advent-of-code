@@ -46,6 +46,8 @@ data class Position(val x: Int, val y: Int) {
     fun sign() = Position(x.sign, y.sign)
 
     companion object {
+        val POSITION_ZERO = Position(x = 0, y = 0)
+
         fun allDeltas(includeDiagonals: Boolean = false): List<Position> {
             val results = mutableListOf<Position>()
             for (dy in -1..1) {
@@ -58,5 +60,11 @@ data class Position(val x: Int, val y: Int) {
             }
             return results
         }
+
+        fun allNeighbors(position: Position, includeDiagonals: Boolean = false): List<Position> =
+            allDeltas(includeDiagonals)
+                .map { delta ->
+                    Position(position.x + delta.x, position.y + delta.y)
+                }
     }
 }
