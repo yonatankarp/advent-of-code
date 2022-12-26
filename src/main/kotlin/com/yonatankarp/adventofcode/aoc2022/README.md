@@ -12,3 +12,4 @@
 | 8   | Treetop Tree House      | [Link](./day08/README.md) | [Link](./day08/Day08.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-8-kotlin-edition)   |
 | 9   | Rope Bridge             | [Link](./day09/README.md) | [Link](./day09/Day09.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-9-kotlin-edition)   |
 | 10  | Cathode-Ray Tube        | [Link](./day10/README.md) | [Link](./day10/Day10.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-10-kotlin-edition)  |
+| 11   | Monkey in the Middle | [Link](./day11/README.md) | [Link](./day11/Day11.kt) | [Link](https://yonatankarp.com/advent-of-code-2022-day-11-kotlin-edition) |

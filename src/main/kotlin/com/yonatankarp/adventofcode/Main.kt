@@ -11,10 +11,11 @@ import java.io.File
 
 fun main(args: Array<String>) {
     val year = 2022
-    val day = 10
+    val day = 11
 
-    if(args.firstOrNull() == "download") {
+    if (args.firstOrNull() == "download") {
         readInputFileFromInternet(year, day)
+    } else if (args.firstOrNull() == "readme") {
         readPuzzleDescriptionFromInternet(year, day)
     } else {
         createDayClassFile(year, day)
@@ -66,7 +67,7 @@ fun readPuzzleDescriptionFromInternet(year: Int, day: Int) {
 private fun createYearlyReadMe(year: Int) {
     val yearlyReadMe = "${year.getYearDirectory("main")}/README.md"
     val yearlyFile = File(yearlyReadMe)
-    if(!yearlyFile.exists()) {
+    if (!yearlyFile.exists()) {
         yearlyFile.parentFile.mkdirs()
         yearlyFile.createNewFile()
         yearlyFile.appendText("# Advent to Code $year" + System.lineSeparator() + System.lineSeparator())
