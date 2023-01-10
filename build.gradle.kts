@@ -24,7 +24,7 @@ dependencies {
     implementation("com.github.kittinunf.result:result:5.3.0") // Needed for Fuel
     implementation("io.github.furstenheim:copy_down:1.1") // Convert puzzle description to markdown
 
-    val junitVersion = "5.9.1"
+    val junitVersion = "5.9.2"
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
